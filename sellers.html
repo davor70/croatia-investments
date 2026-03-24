@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sellers — Croatia Investments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0d1b2a;--navy-light:#1e2f45;--gold:#c9a84c;--gold-light:#e0c578;--cream:#f8f5ef;--white:#ffffff;--gray:#8a9ab0;--gray-light:#dce4ee;--text:#2a3a4e; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:100px;}
+  @media (max-width: 768px) {
+    nav { height: 68px; padding: 0 4%; }
+    nav svg { height: 52px !important; }
+    .nav-details .drop { top: 68px; }
+  }
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:500;color:var(--white);letter-spacing:0.02em;text-decoration:none;}
+  .nav-logo span{color:var(--gold);}
+  .nav-tagline{font-size:0.62rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.35);font-style:italic;margin-top:2px;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{color:var(--gray);text-decoration:none;font-size:0.82rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);}
+  .nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:9px 24px;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;text-decoration:none;}
+  .nav-cta:hover{background:var(--gold);color:var(--navy);}
+  .page-hero{background:var(--navy);padding:160px 5% 80px;position:relative;overflow:hidden;}
+  .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;}
+  .page-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 80% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);}
+  .page-hero-content{position:relative;z-index:2;max-width:700px;}
+  .page-tag{display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;}
+  .page-tag::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;color:var(--white);line-height:1.1;}
+  .page-hero h1 em{font-style:italic;color:var(--gold-light);}
+  .page-hero p{font-size:1rem;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.75;max-width:520px;margin-top:1.5rem;}
+  .gold-divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .section{padding:90px 5%;}
+  .section-tag{display:inline-flex;align-items:center;gap:10px;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+  .section-tag::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;color:var(--navy);line-height:1.2;margin-bottom:2rem;}
+  .section-title em{font-style:italic;color:var(--gold);}
+
+  /* WHY LIST */
+  .benefits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5px;margin-top:3rem;}
+  .benefit-card{background:var(--white);border:1px solid var(--gray-light);padding:36px 32px;transition:all 0.3s;}
+  .benefit-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 20px 40px rgba(13,27,42,0.08);}
+  .benefit-icon{width:44px;height:44px;background:var(--navy);border:1px solid rgba(201,168,76,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;}
+  .benefit-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem;}
+  .benefit-text{font-size:0.84rem;font-weight:300;color:var(--gray);line-height:1.75;}
+
+  /* PROCESS */
+  .process-section{background:var(--navy);padding:90px 5%;}
+  .process-section .section-title{color:var(--white);}
+  .process-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;margin-top:3rem;border:1px solid rgba(201,168,76,0.15);}
+  .process-step{padding:40px 36px;border-right:1px solid rgba(201,168,76,0.15);}
+  .process-step:last-child{border-right:none;}
+  .step-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:1rem;}
+  .step-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--white);margin-bottom:0.75rem;}
+  .step-text{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.7;}
+
+  /* REQUIREMENTS */
+  .req-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .req-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+  .req-item{display:flex;align-items:flex-start;gap:1rem;padding:18px 0;border-bottom:1px solid var(--gray-light);}
+  .req-item:first-child{border-top:1px solid var(--gray-light);}
+  .req-check{width:20px;height:20px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:0.65rem;color:var(--gold);}
+  .req-text{font-size:0.88rem;font-weight:400;color:var(--text);line-height:1.6;}
+  .req-text strong{display:block;font-weight:500;color:var(--navy);margin-bottom:3px;}
+
+  /* CTA */
+  .cta-section{background:var(--navy);padding:80px 5%;text-align:center;}
+  .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:var(--white);margin-bottom:1rem;}
+  .cta-section h2 em{font-style:italic;color:var(--gold-light);}
+  .cta-section p{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.55);max-width:500px;margin:0 auto 2.5rem;line-height:1.75;}
+  .btn-primary{background:var(--gold);color:var(--navy);border:none;padding:16px 44px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;text-decoration:none;display:inline-block;}
+  .btn-primary:hover{background:var(--gold-light);}
+
+  footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.15);padding:60px 5% 40px;}
+  .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--white);}
+  .footer-logo span{color:var(--gold);}
+  .footer-tagline{font-size:0.78rem;color:var(--gray);margin-top:6px;font-style:italic;}
+  .footer-links{display:flex;gap:4rem;}
+  .footer-col-title{font-size:0.65rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+  .footer-col a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:0.5rem;transition:color 0.2s;}
+  .footer-col a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+  @media(max-width:768px){
+    .nav-links{display:none;}
+    .nav-tagline{display:none;}
+    nav{padding:0 4%;}
+    .page-hero{padding:120px 4% 60px;}
+    .page-hero h1{font-size:2.2rem;}
+    .page-hero p{font-size:0.88rem;}
+    .section{padding:60px 4%;}
+    .benefits-grid{grid-template-columns:1fr;}
+    .benefit-card{padding:28px 24px;}
+    .process-section{padding:60px 4%;}
+    .process-grid{grid-template-columns:1fr;}
+    .process-step{border-right:none;border-bottom:1px solid rgba(201,168,76,0.15);padding:28px 24px;}
+    .req-grid{grid-template-columns:1fr;gap:2rem;}
+    .cta-section{padding:60px 4%;}
+    .footer-links{flex-wrap:wrap;gap:2rem;}
+    .footer-top{flex-direction:column;gap:2rem;}
+    footer{padding:40px 4% 30px;}
+  }
+  @media(max-width:480px){
+    .page-hero h1{font-size:1.8rem;}
+    .nav-logo{font-size:1.5rem;}
+  }
+
+  
+  }
+
+  @media (max-width: 768px) {
+    .footer-col { min-width: 140px; }
+    .footer-col-title { margin-bottom: 0.75rem; }
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  @media (max-width: 768px) {
+    
+    .nav-cta-sellers {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+    padding: 9px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s;
+    white-space: nowrap;
+  }
+  .nav-cta-sellers:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+  }
+  @media (max-width: 768px) { .nav-cta-sellers { display: none; } }
+  .nav-cta { display: none; }
+  }
+
+  
+
+  /* DETAILS HAMBURGER - pure HTML, no JS */
+  .nav-details {
+    display: none;
+    position: relative;
+    z-index: 300;
+  }
+  .nav-details summary {
+    list-style: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .nav-details summary::-webkit-details-marker { display: none; }
+  .nav-details summary::marker { display: none; }
+  .nav-details summary span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-details[open] summary span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-details[open] summary span:nth-child(2) { opacity: 0; }
+  .nav-details[open] summary span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-details .drop {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background: #0d1b2a;
+    border-bottom: 2px solid rgba(201,168,76,0.4);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    z-index: 299;
+  }
+  .nav-details .drop a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 18px 6%;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: block;
+  }
+  .nav-details .drop a:hover { color: #c9a84c; background: rgba(201,168,76,0.05); }
+  @media (max-width: 768px) {
+    .nav-details { display: block; }
+    .nav-cta { display: none !important; }
+    .nav-links { display: none !important; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    nav { height: 80px; padding: 0 3%; 
+    /* Lighter backgrounds on tablet */
+    .hero { background: #1e3448 !important; }
+    .how-section { background: #1e3448 !important; }
+    .card-header { background: #1e3448 !important; }
+    .modal-header { background: #1e3448 !important; }
+    .bespoke-cta-card { background: #1e3448 !important; }
+    footer { background: #1a2e40 !important; }
+    nav { background: rgba(24,44,62,0.97) !important; }
+    .page-hero { background: #1e3448 !important; }
+  }
+    nav svg { height: 72px !important; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.05em; }
+    .nav-cta { padding: 7px 14px; font-size: 0.7rem; letter-spacing: 0.06em; }
+    .nav-cta-sellers { display: none; }
+    .nav-details .drop { top: 80px; }
+  }
+  html, body { overflow-x: hidden; max-width: 100%; }
+</style>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Croatia Investments">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="theme-color" content="#0d1b2a">
+</head>
+<body>
+
+
+
+<nav>
+    <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" style="height:124px; width:auto; display:block;">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#e8d48a"/>
+          <stop offset="50%" style="stop-color:#d4a84c"/>
+          <stop offset="100%" style="stop-color:#b8922e"/>
+        </linearGradient>
+        <clipPath id="boxClip">
+          <rect x="34" y="34" width="92" height="92"/>
+        </clipPath>
+      </defs>
+      <rect x="34" y="34" width="92" height="92" fill="none" stroke="url(#goldGrad)" stroke-width="1.8"/>
+      <text x="65" y="107" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="400" fill="#d4a84c" clip-path="url(#boxClip)" text-anchor="middle">C</text>
+      <text x="103" y="107" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="400" fill="#ffffff" clip-path="url(#boxClip)" text-anchor="middle">I</text>
+      <line x1="146" y1="44" x2="146" y2="116" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.5"/>
+      <text x="162" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="500" fill="#ffffff" letter-spacing="0.5">CROATIA</text>
+      <text x="162" y="100" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="400" fill="#d4a84c" letter-spacing="0.5">INVESTMENTS</text>
+      <text x="162" y="120" font-family="Georgia, serif" font-size="8.5" font-weight="300" fill="#8a9ab0" letter-spacing="2.5" font-style="italic">PREMIUM DEVELOPMENT OPPORTUNITIES</text>
+      <line x1="162" y1="128" x2="372" y2="128" stroke="#c9a84c" stroke-width="0.5" stroke-opacity="0.5"/>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">List Your Project</a>
+
+  
+
+<details class="nav-details">
+  <summary><span></span><span></span><span></span></summary>
+  <div class="drop">
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#process">Process</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="sellers.html">For Sellers</a>
+      <a href="#" onclick="closeModal();openModal('investor-modal');return false;" style="color:var(--gold);font-weight:500;">Register as Investor</a>
+  </div>
+</details>
+</nav>
+
+
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-tag">For Project Owners</div>
+    <h1>Reach the right<br><em>investors, discreetly</em></h1>
+    <p>We connect serious, pre-qualified investors with development projects across Croatia. No public listings, no unwanted exposure — just the right introduction at the right time.</p>
+  </div>
+</section>
+<div class="gold-divider"></div>
+
+<!-- WHY LIST WITH US -->
+<section class="section">
+  <div class="section-tag">Why List With Us</div>
+  <h2 class="section-title">What we offer <em>project owners</em></h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="benefit-title">Access to Qualified Investors</div>
+      <div class="benefit-text">Our investor network includes private individuals, family offices and institutional funds from Croatia, Austria, Germany, Switzerland, the UK and beyond — all pre-verified before introduction.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="benefit-title">Full Discretion</div>
+      <div class="benefit-text">Your exact location, identity and documentation remain private until we have verified investor interest and both parties are ready to proceed. No public exposure without your consent.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div class="benefit-title">International Reach</div>
+      <div class="benefit-text">Croatia Investments actively promotes to investors across 12+ countries. Your project gains visibility in markets that are actively seeking Adriatic and CEE real estate opportunities.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="benefit-title">No Upfront Costs</div>
+      <div class="benefit-text">We operate on a success fee model. You pay nothing to list your project — our fee is a percentage of the transaction value, only upon successful completion of the deal.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <div class="benefit-title">Professional Presentation</div>
+      <div class="benefit-text">We prepare and present your project professionally — curating the right level of information to attract serious interest without revealing sensitive details prematurely.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="benefit-title">Dedicated Support</div>
+      <div class="benefit-text">From initial listing to final introduction, our team guides you through the entire process and remains available to answer questions from both sides throughout.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTING PROCESS -->
+<section class="process-section">
+  <div class="section-tag" style="color:var(--gold)"><span style="display:inline-block;width:24px;height:1px;background:var(--gold);margin-right:10px;vertical-align:middle"></span>Listing Process</div>
+  <h2 class="section-title" style="margin-top:0.5rem">How to <em>list your project</em></h2>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Initial Contact</div>
+      <div class="step-text">Reach out via our contact form or email. We schedule a confidential consultation to understand your project and goals.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Documentation Review</div>
+      <div class="step-text">Our team reviews your project documentation, permits and ownership structure. We verify everything before proceeding.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Agreement & Listing</div>
+      <div class="step-text">We sign a posrednički ugovor (intermediary agreement) defining terms, exclusivity period and success fee. Your project goes live within 5 business days.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Investor Introduction</div>
+      <div class="step-text">When a qualified investor expresses interest and is approved, we facilitate a direct introduction and provide them with your full documentation package.</div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="section">
+  <div class="req-grid">
+    <div>
+      <div class="section-tag">Listing Requirements</div>
+      <h2 class="section-title">What we need from <em>you</em></h2>
+      <p style="font-size:0.9rem;font-weight:300;color:var(--gray);line-height:1.8;margin-top:-0.5rem;">To maintain the quality and credibility of our platform, we require the following documentation before listing any project.</p>
+    </div>
+    <ul class="req-list">
+      <li class="req-item"><div class="req-check">✓</div><div class="req-text"><strong>Proof of Ownership</strong>Zemljišnoknjižni izvadak (Land Registry extract) confirming legal ownership of the property or development land.</div></li>
+      <li class="req-item"><div class="req-check">✓</div><div class="req-text"><strong>Idejni Projekt</strong>Conceptual architectural plans or development concept showing intended use, scale and design direction.</div></li>
+      <li class="req-item"><div class="req-check">✓</div><div class="req-text"><strong>Permit Status Documentation</strong>Current status of all permits — lokacijska dozvola, građevinska dozvola or uporabna dozvola as applicable.</div></li>
+      <li class="req-item"><div class="req-check">✓</div><div class="req-text"><strong>Investment Overview</strong>Approximate total investment required, expected return on investment, and preferred deal structure (full acquisition, JV, equity).</div></li>
+      <li class="req-item"><div class="req-check">✓</div><div class="req-text"><strong>Identity Verification</strong>Valid ID or company registration documents for the project owner or authorised representative.</div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to find your <em>ideal investor?</em></h2>
+  <p>Contact us today for a confidential consultation. There is no obligation and no upfront cost.</p>
+  <a href="contact.html" class="btn-primary">Get in Touch →</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Croatia <span>Investments</span></div>
+      <div class="footer-tagline">Connecting Capital with Opportunity</div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="gdpr.html">GDPR</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="contact.html">Get in Touch</a>
+        <a href="#">info&#64;croatia-investments&#46;com</a>
+        <a href="#">Rijeka, Croatia</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="footer-copy">© 2025 Croatia Investments. All rights reserved.</div></div>
+</footer>
+<script>
+</script>
+
+
+
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display:none">
+<style>
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: rgba(13,27,42,0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201,168,76,0.25);
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: 'DM Sans', sans-serif;
+  animation: cookie-slide-up 0.4s ease;
+}
+@keyframes cookie-slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+#cookie-banner p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+#cookie-banner a {
+  color: #c9a84c;
+  text-decoration: none;
+}
+#cookie-banner a:hover { text-decoration: underline; }
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.cookie-btn-essential {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.4);
+  color: rgba(255,255,255,0.6);
+  padding: 8px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-essential:hover {
+  border-color: rgba(201,168,76,0.8);
+  color: #fff;
+}
+.cookie-btn-accept {
+  background: #c9a84c;
+  border: 1px solid #c9a84c;
+  color: #0d1b2a;
+  padding: 8px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-accept:hover {
+  background: #e0c578;
+  border-color: #e0c578;
+}
+@media (max-width: 640px) {
+  #cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 4%;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn-essential, .cookie-btn-accept { flex: 1; text-align: center; }
+}
+</style>
+<p>We use cookies — to keep the site running and to understand how you use it. Analytics cookies are only set with your consent. <a href="/privacy.html">Learn more</a></p>
+<div class="cookie-actions">
+  <button class="cookie-btn-essential" onclick="cookieChoice('essential')">Essential Only</button>
+  <button class="cookie-btn-accept" onclick="cookieChoice('all')">Accept All</button>
+</div>
+</div>
+<script>
+(function() {
+  var consent = localStorage.getItem('ci-cookie-consent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+})();
+function cookieChoice(type) {
+  localStorage.setItem('ci-cookie-consent', type);
+  var b = document.getElementById('cookie-banner');
+  b.style.transition = 'opacity 0.3s, transform 0.3s';
+  b.style.opacity = '0';
+  b.style.transform = 'translateY(20px)';
+  setTimeout(function() { b.style.display = 'none'; }, 320);
+}
+</script>
+
+  <script src="/pwa-init.js"></script>
+</body>
+</html>

@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Croatia Investments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #162032;
+    --navy-light: #1e2f45;
+    --gold: #c9a84c;
+    --gold-light: #e0c578;
+    --gold-pale: #f5e9c8;
+    --cream: #f8f5ef;
+    --white: #ffffff;
+    --gray: #8a9ab0;
+    --gray-light: #dce4ee;
+    --text: #2a3a4e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,27,42,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 100px;
+  }
+  @media (max-width: 768px) {
+    nav { height: 68px; padding: 0 4%; }
+    nav svg { height: 52px !important; }
+    .nav-details .drop { top: 68px; }
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--gold); }
+  .nav-tagline { font-size: 0.62rem; font-weight: 300; letter-spacing: 0.08em; color: rgba(255,255,255,0.35); font-style: italic; margin-top: 2px; }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta-sellers {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+    padding: 9px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s;
+    white-space: nowrap;
+  }
+  .nav-cta-sellers:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+  }
+  @media (max-width: 768px) { .nav-cta-sellers { display: none; } }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 9px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5%;
+    justify-content: flex-start;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 30%, rgba(30,47,69,0.8) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 55%;
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 14px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 14px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* COLLAGE */
+  .hero-collage {
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 42%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    z-index: 1;
+  }
+  .hero-collage::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, var(--navy) 0%, transparent 30%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero-collage::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, var(--navy) 0%, transparent 15%, transparent 85%, var(--navy) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .collage-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) saturate(0.85);
+    transition: filter 0.4s;
+  }
+  .collage-img:hover { filter: brightness(0.85) saturate(1); }
+  .collage-label {
+    position: absolute;
+    bottom: 12px; right: 12px;
+    z-index: 3;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  /* DIVIDER */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 100px 5%;
+  }
+
+  .section-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-tag::before {
+    content: ''; display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* FILTERS */
+  .filters {
+    display: flex; gap: 0.75rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--gray-light);
+    color: var(--gray);
+    padding: 8px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.06);
+  }
+
+  /* PROJECT GRID */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5px;
+  }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    padding: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    min-width: 0;
+  }
+
+  .project-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 60px rgba(13,27,42,0.1);
+  }
+
+  .card-header {
+    background: var(--navy);
+    padding: 28px 28px 22px;
+    position: relative;
+  }
+
+  .card-category {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+
+  .card-location {
+    font-size: 0.78rem;
+    color: var(--gray);
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .card-location svg { flex-shrink: 0; }
+
+  .card-
+
+  .card-body {
+    padding: 28px 28px 20px;
+    overflow: hidden;
+  }
+
+  .card-meta {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta-item {}
+
+  .meta-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4px;
+  }
+
+  .meta-value {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .meta-value.gold { color: var(--gold); }
+
+  /* Permit progress */
+  .permit-bar {
+    margin-bottom: 1.5rem;
+  }
+
+  .permit-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+
+  .permit-track {
+    height: 3px;
+    background: var(--gray-light);
+    position: relative;
+  }
+
+  .permit-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transition: width 0.6s ease;
+  }
+
+  .permit-steps {
+    display: flex; justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .permit-step {
+    font-size: 0.58rem;
+    color: var(--gray);
+    text-align: center;
+    width: 60px;
+  }
+  @media (max-width: 768px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card { width: 100%; max-width: 100%; }
+    .permit-step { font-size: 0.5rem; width: auto; flex: 1; min-width: 0; }
+    .permit-steps { overflow: hidden; }
+    .card-header { padding: 20px 16px 16px; }
+    .card-body { padding: 20px 16px; overflow: hidden; }
+    .card-footer { padding: 14px 16px; flex-wrap: wrap; gap: 0.75rem; }
+    .card-cta { width: 100%; text-align: center; }
+    .card-meta { gap: 0.6rem; }
+    .section { padding: 60px 4%; }
+    html, body { overflow-x: hidden; max-width: 100%; }
+  }
+
+  .permit-step.done { color: var(--gold); }
+
+  .card-footer {
+    border-top: 1px solid var(--gray-light);
+    padding: 16px 28px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  .investment-range {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  .investment-range span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .card-cta {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--navy);
+    padding: 9px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .card-cta:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: var(--navy);
+  }
+
+  .card-reveal {
+    display: none;
+  }
+
+  /* HOW IT WORKS */
+  .how-section {
+    background: var(--navy);
+    padding: 100px 5%;
+  }
+
+  .how-section .section-title { color: var(--white); }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0;
+    margin-top: 3rem;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .step {
+    padding: 40px 36px;
+    border-right: 1px solid rgba(201,168,76,0.15);
+    position: relative;
+  }
+
+  .step:last-child { border-right: none; }
+
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-desc {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  .step-icon {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+
+  /* HAMBURGER NAV */
+  .nav-details { display: none; position: relative; z-index: 300; }
+  .nav-details summary {
+    list-style: none; cursor: pointer;
+    width: 40px; height: 40px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 5px;
+  }
+  .nav-details summary::-webkit-details-marker { display: none; }
+  .nav-details summary::marker { display: none; }
+  .nav-details summary span { display: block; width: 24px; height: 2px; background: #ffffff; border-radius: 2px; transition: all 0.3s; }
+  .nav-details[open] summary span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-details[open] summary span:nth-child(2) { opacity: 0; }
+  .nav-details[open] summary span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-details .drop {
+    position: fixed; top: 100px; left: 0; right: 0;
+    background: #0d1b2a;
+    border-bottom: 2px solid rgba(201,168,76,0.4);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    display: flex; flex-direction: column; z-index: 299;
+  }
+  .nav-details .drop a {
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 18px 6%; border-bottom: 1px solid rgba(255,255,255,0.07); display: block;
+  }
+  .nav-details .drop a:hover { color: #c9a84c; background: rgba(201,168,76,0.05); }
+  @media (max-width: 768px) {
+    .nav-details { display: block; }
+    .nav-cta { display: none !important; }
+    .nav-links { display: none !important; }
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(13,27,42,0.75);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    visibility: hidden; opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; visibility: visible; }
+  .modal {
+    background: var(--white); width: 100%;
+    max-width: 620px; max-height: 90vh;
+    overflow-y: auto; position: relative;
+  }
+  .modal-body { padding: 36px 40px 40px; }
+  .modal-close-x {
+    position: absolute; top: 18px; right: 20px;
+    background: transparent; border: none;
+    color: rgba(255,255,255,0.5); font-size: 1rem;
+    cursor: pointer; width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    transition: color 0.2s; z-index: 1;
+  }
+  .modal-close-x:hover { color: var(--white); }
+  .modal-header { background: var(--navy); padding: 36px 40px 28px; position: relative; }
+  .modal-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); }
+  .modal-intro { font-size: 0.88rem; color: var(--gray); line-height: 1.7; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-light); }
+  .form-group { margin-bottom: 1.4rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-label { display: block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 7px; }
+  .form-input, .form-select { width: 100%; border: 1px solid var(--gray-light); background: var(--cream); padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+  .form-input:focus, .form-select:focus { border-color: var(--gold); background: var(--white); }
+  .form-note { font-size: 0.75rem; color: var(--gray); line-height: 1.6; margin-top: 1rem; padding: 12px 16px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.05); }
+  .form-submit { width: 100%; background: var(--navy); color: var(--white); border: none; padding: 16px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.25s; margin-top: 1.5rem; }
+  .form-submit:hover { background: var(--navy-light); }
+  .success-state { text-align: center; padding: 3rem 2rem; display: none; }
+  .success-icon { width: 64px; height: 64px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; }
+  .success-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--navy); margin-bottom: 0.75rem; }
+  .success-state p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+  @media (max-width: 768px) {
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal { max-height: 92vh; }
+    .modal-header { padding: 24px 20px 18px; }
+    .modal-body { padding: 24px 20px 28px; }
+    .modal-title { font-size: 1.4rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .modal-header { padding: 20px 16px 14px; }
+    .modal-body { padding: 20px 16px 24px; }
+    .form-submit { padding: 14px; }
+  }
+
+  /* MULTI-SELECT CHECKBOXES */
+  .multi-select {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--gray-light);
+    background: var(--cream);
+  }
+  .multi-select label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    font-size: 0.85rem;
+    color: var(--text);
+    cursor: pointer;
+    border-bottom: 1px solid var(--gray-light);
+    transition: background 0.15s;
+  }
+  .multi-select label:last-child { border-bottom: none; }
+  .multi-select label:hover { background: rgba(201,168,76,0.06); }
+  .multi-select input[type="checkbox"] {
+    accent-color: var(--gold);
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .multi-select label.checked { background: rgba(201,168,76,0.08); color: var(--navy); font-weight: 500; }
+
+
+  .bespoke-section { background: var(--cream); }
+  .bespoke-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .bespoke-intro { font-size: 0.92rem; font-weight: 300; color: var(--gray); line-height: 1.8; margin-bottom: 2.5rem; }
+  .bespoke-features { display: flex; flex-direction: column; gap: 1.5rem; }
+  .bespoke-feature { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .bf-icon { width: 36px; height: 36px; background: var(--navy); border: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .bf-title { font-size: 0.88rem; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+  .bf-text { font-size: 0.82rem; font-weight: 300; color: var(--gray); line-height: 1.65; }
+  .bespoke-cta-wrap { display: flex; align-items: center; justify-content: center; }
+  .bespoke-cta-card { background: var(--navy); padding: 52px 44px; text-align: center; border: 1px solid rgba(201,168,76,0.2); position: relative; overflow: hidden; width: 100%; }
+  .bespoke-cta-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .bespoke-cta-icon { width: 64px; height: 64px; border: 1px solid rgba(201,168,76,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+  .bespoke-cta-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+  .bespoke-cta-title em { font-style: italic; color: var(--gold-light); }
+  .bespoke-cta-text { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
+  .bespoke-cta-btn { background: var(--gold); color: var(--navy); border: none; padding: 15px 36px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .bespoke-cta-btn:hover { background: var(--gold-light); }
+  .bespoke-cta-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); margin-top: 1rem; letter-spacing: 0.05em; }
+  @media (max-width: 768px) {
+    .bespoke-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .bespoke-cta-card { padding: 36px 24px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .bespoke-grid { gap: 2.5rem; 
+    /* Lighter backgrounds on tablet */
+    .hero { background: #1e3448 !important; }
+    .how-section { background: #1e3448 !important; }
+    .card-header { background: #1e3448 !important; }
+    .modal-header { background: #1e3448 !important; }
+    .bespoke-cta-card { background: #1e3448 !important; }
+    footer { background: #1a2e40 !important; }
+    nav { background: rgba(24,44,62,0.97) !important; }
+    .page-hero { background: #1e3448 !important; }
+  }
+    .bespoke-cta-card { padding: 36px 28px; }
+  }
+
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    nav { height: 80px; padding: 0 3%; }
+    nav svg { height: 72px !important; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.05em; }
+    .nav-cta { padding: 7px 14px; font-size: 0.7rem; letter-spacing: 0.06em; }
+    .nav-cta-sellers { display: none; }
+    .nav-details .drop { top: 80px; }
+    /* Lighter backgrounds on tablet */
+    .hero { background: #1e3448 !important; }
+    .how-section { background: #1e3448 !important; }
+    .card-header { background: #1e3448 !important; }
+    .modal-header { background: #1e3448 !important; }
+    .bespoke-cta-card { background: #1e3448 !important; }
+    footer { background: #1a2e40 !important; }
+    nav { background: rgba(24,44,62,0.97) !important; }
+    .page-hero { background: #1e3448 !important; }
+  }
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 60px 5% 40px;
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 3rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--white);
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline { font-size: 0.78rem; color: var(--gray); margin-top: 6px; font-style: italic; }
+  .footer-links { display: flex; gap: 4rem; }
+  .footer-col-title {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  }
+  .footer-col a {
+    display: block; font-size: 0.82rem; color: rgba(255,255,255,0.45);
+    text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+  .footer-legal {
+    font-size: 0.72rem; color: rgba(255,255,255,0.25);
+    max-width: 500px; line-height: 1.6; text-align: right;
+  }
+  @media (max-width: 768px) {
+    footer { padding: 40px 4% 30px; }
+    .footer-top { flex-direction: column; gap: 2rem; }
+    .footer-links { flex-wrap: wrap; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-legal { text-align: center; max-width: 100%; }
+    .footer-col { min-width: 140px; }
+  }
+
+</style>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Croatia Investments">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="theme-color" content="#0d1b2a">
+</head>
+<body>
+
+<details class="nav-details" style="display:none" id="mob-details">
+  <summary style="display:none"></summary>
+</details>
+
+<nav>
+  <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" style="height:124px; width:auto; display:block;">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#e8d48a"/>
+          <stop offset="50%" style="stop-color:#d4a84c"/>
+          <stop offset="100%" style="stop-color:#b8922e"/>
+        </linearGradient>
+        <clipPath id="boxClip">
+          <rect x="34" y="34" width="92" height="92"/>
+        </clipPath>
+      </defs>
+      <rect x="34" y="34" width="92" height="92" fill="none" stroke="url(#goldGrad)" stroke-width="1.8"/>
+      <text x="65" y="107" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="400" fill="#d4a84c" clip-path="url(#boxClip)" text-anchor="middle">C</text>
+      <text x="103" y="107" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="400" fill="#ffffff" clip-path="url(#boxClip)" text-anchor="middle">I</text>
+      <line x1="146" y1="44" x2="146" y2="116" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.5"/>
+      <text x="162" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="500" fill="#ffffff" letter-spacing="0.5">CROATIA</text>
+      <text x="162" y="100" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="400" fill="#d4a84c" letter-spacing="0.5">INVESTMENTS</text>
+      <text x="162" y="120" font-family="Georgia, serif" font-size="8.5" font-weight="300" fill="#8a9ab0" letter-spacing="2.5" font-style="italic">PREMIUM DEVELOPMENT OPPORTUNITIES</text>
+      <line x1="162" y1="128" x2="372" y2="128" stroke="#c9a84c" stroke-width="0.5" stroke-opacity="0.5"/>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html" style="color:var(--gold)">Projects</a></li>
+    <li><a href="projects.html#bespoke">Bespoke</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:0.75rem;">
+    <a href="sellers.html" class="nav-cta-sellers">List Your Project</a>
+    <button class="nav-cta" onclick="openModal('investor-modal')">Register as Investor</button>
+  </div>
+  <details class="nav-details">
+    <summary><span></span><span></span><span></span></summary>
+    <div class="drop">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="projects.html#bespoke">Bespoke Search</a>
+      <a href="index.html#process">Process</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="sellers.html">For Sellers</a>
+      <a href="#" onclick="closeModal();openModal('investor-modal');return false;" style="color:var(--gold);font-weight:500;">Register as Investor</a>
+    </div>
+  </details>
+</nav>
+
+<section style="background:var(--navy);padding:140px 5% 70px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:60px 60px;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 80% 50%,rgba(201,168,76,0.06) 0%,transparent 70%);"></div>
+  <div style="position:relative;z-index:2;">
+    <div style="display:inline-flex;align-items:center;gap:10px;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;"><span style="display:block;width:32px;height:1px;background:var(--gold);"></span>Investment Portfolio</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;color:#fff;line-height:1.1;">Featured <em style="font-style:italic;color:#e0c578;">Development Projects</em></h1>
+    <p style="font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.55);max-width:520px;margin-top:1rem;line-height:1.75;">Browse our curated selection of verified real estate and development opportunities across Croatia. Register your interest to access full documentation.</p>
+  </div>
+</section>
+<div class="gold-divider"></div>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+    <div class="projects-grid" id="projectsGrid">
+
+    <!-- Project 1 -->
+    <div class="project-card" data-category="tourism">
+      <div class="card-header">
+        <div class="card-category">Tourism & Hospitality</div>
+        <div class="card-title">Boutique Hotel Complex</div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          South Dalmatia — Island Area
+        </div>
+        <div class="status-badge featured">Featured</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="meta-item">
+            <div class="meta-label">Use Type</div>
+            <div class="meta-value">5★ Boutique Hotel</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Gross Area</div>
+            <div class="meta-value">~3,200 m²</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Units</div>
+            <div class="meta-value">28 Suites</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">ROI Estimate</div>
+            <div class="meta-value gold">8–12% / yr</div>
+          </div>
+        </div>
+        <div class="permit-bar">
+          <div class="permit-label">
+            <span>Permit Status</span>
+            <span style="color: var(--gold)">Location Permit</span>
+          </div>
+          <div class="permit-track">
+            <div class="permit-fill" style="width: 50%"></div>
+          </div>
+          <div class="permit-steps">
+            <div class="permit-step done">Conceptual<br>Design</div>
+            <div class="permit-step done">Location<br>Permit</div>
+            <div class="permit-step">Building<br>Permit</div>
+            <div class="permit-step">Occupancy<br>Permit</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="investment-range">
+          <span>Investment Range</span>
+          €8M – €14M
+        </div>
+        <button class="card-cta" onclick="openModal('investor-modal', 'Boutique Hotel Complex')">Express Interest</button>
+      </div>
+      <div class="card-reveal">Click to register interest →</div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card" data-category="residential">
+      <div class="card-header">
+        <div class="card-category">Residential</div>
+        <div class="card-title">Premium Residential Complex</div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Split Metropolitan Area
+        </div>
+        <div class="status-badge new">New</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="meta-item">
+            <div class="meta-label">Use Type</div>
+            <div class="meta-value">Residential</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Gross Area</div>
+            <div class="meta-value">~2,800 m²</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Units</div>
+            <div class="meta-value">32 Apartments</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">ROI Estimate</div>
+            <div class="meta-value gold">6–9% / yr</div>
+          </div>
+        </div>
+        <div class="permit-bar">
+          <div class="permit-label">
+            <span>Permit Status</span>
+            <span style="color: var(--gold)">Building Permit</span>
+          </div>
+          <div class="permit-track">
+            <div class="permit-fill" style="width: 75%"></div>
+          </div>
+          <div class="permit-steps">
+            <div class="permit-step done">Conceptual<br>Design</div>
+            <div class="permit-step done">Location<br>Permit</div>
+            <div class="permit-step done">Building<br>Permit</div>
+            <div class="permit-step">Occupancy<br>Permit</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="investment-range">
+          <span>Investment Range</span>
+          €4M – €6M
+        </div>
+        <button class="card-cta" onclick="openModal('investor-modal', 'Premium Residential Complex')">Express Interest</button>
+      </div>
+      <div class="card-reveal">Click to register interest →</div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card" data-category="tourism">
+      <div class="card-header">
+        <div class="card-category">Tourism & Hospitality</div>
+        <div class="card-title">Wellness & Spa Resort</div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Kvarner Bay Region
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="meta-item">
+            <div class="meta-label">Use Type</div>
+            <div class="meta-value">Wellness Resort</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Gross Area</div>
+            <div class="meta-value">~7,500 m²</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Units</div>
+            <div class="meta-value">65 Rooms + Spa</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">ROI Estimate</div>
+            <div class="meta-value gold">10–15% / yr</div>
+          </div>
+        </div>
+        <div class="permit-bar">
+          <div class="permit-label">
+            <span>Permit Status</span>
+            <span style="color: var(--gray)">Conceptual Design</span>
+          </div>
+          <div class="permit-track">
+            <div class="permit-fill" style="width: 20%"></div>
+          </div>
+          <div class="permit-steps">
+            <div class="permit-step done">Conceptual<br>Design</div>
+            <div class="permit-step">Location<br>Permit</div>
+            <div class="permit-step">Building<br>Permit</div>
+            <div class="permit-step">Occupancy<br>Permit</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="investment-range">
+          <span>Investment Range</span>
+          €18M – €25M
+        </div>
+        <button class="card-cta" onclick="openModal('investor-modal', 'Wellness & Spa Resort')">Express Interest</button>
+      </div>
+      <div class="card-reveal">Click to register interest →</div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card" data-category="commercial">
+      <div class="card-header">
+        <div class="card-category">Commercial</div>
+        <div class="card-title">Business & Retail Park</div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Zagreb East Corridor
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="meta-item">
+            <div class="meta-label">Use Type</div>
+            <div class="meta-value">Offices + Retail</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Gross Area</div>
+            <div class="meta-value">~9,200 m²</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Units</div>
+            <div class="meta-value">18 Offices + 12 Retail</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">ROI Estimate</div>
+            <div class="meta-value gold">7–10% / yr</div>
+          </div>
+        </div>
+        <div class="permit-bar">
+          <div class="permit-label">
+            <span>Permit Status</span>
+            <span style="color: var(--gold)">Building Permit</span>
+          </div>
+          <div class="permit-track">
+            <div class="permit-fill" style="width: 75%"></div>
+          </div>
+          <div class="permit-steps">
+            <div class="permit-step done">Conceptual<br>Design</div>
+            <div class="permit-step done">Location<br>Permit</div>
+            <div class="permit-step done">Building<br>Permit</div>
+            <div class="permit-step">Occupancy<br>Permit</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="investment-range">
+          <span>Investment Range</span>
+          €11M – €16M
+        </div>
+        <button class="card-cta" onclick="openModal('investor-modal', 'Business & Retail Park')">Express Interest</button>
+      </div>
+      <div class="card-reveal">Click to register interest →</div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card" data-category="mixed">
+      <div class="card-header">
+        <div class="card-category">Mixed Use</div>
+        <div class="card-title">Waterfront Mixed-Use Development</div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Northern Dalmatia Coast
+        </div>
+        <div class="status-badge featured">Featured</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="meta-item">
+            <div class="meta-label">Use Type</div>
+            <div class="meta-value">Hotel + Residential</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Gross Area</div>
+            <div class="meta-value">~12,000 m²</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Units</div>
+            <div class="meta-value">40 Hotel + 24 Apts</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">ROI Estimate</div>
+            <div class="meta-value gold">11–16% / yr</div>
+          </div>
+        </div>
+        <div class="permit-bar">
+          <div class="permit-label">
+            <span>Permit Status</span>
+            <span style="color: var(--gold)">Location Permit</span>
+          </div>
+          <div class="permit-track">
+            <div class="permit-fill" style="width: 50%"></div>
+          </div>
+          <div class="permit-steps">
+            <div class="permit-step done">Conceptual<br>Design</div>
+            <div class="permit-step done">Location<br>Permit</div>
+            <div class="permit-step">Building<br>Permit</div>
+            <div class="permit-step">Occupancy<br>Permit</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="investment-range">
+          <span>Investment Range</span>
+          €22M – €30M
+        </div>
+        <button class="card-cta" onclick="openModal('investor-modal', 'Waterfront Mixed-Use Development')">Express Interest</button>
+      </div>
+      <div class="card-reveal">Click to register interest →</div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project-card" data-category="residential">
+      <div class="card-header">
+        <div class="card-category">Residential</div>
+        <div class="card-title">Luxury Villa Development</div>
+        <div class="card-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Istrian Peninsula
+        </div>
+        <div class="status-badge new">New</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="meta-item">
+            <div class="meta-label">Use Type</div>
+            <div class="meta-value">Luxury Villas</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Gross Area</div>
+            <div class="meta-value">~4,100 m²</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Units</div>
+            <div class="meta-value">8 Villas</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">ROI Estimate</div>
+            <div class="meta-value gold">9–13% / yr</div>
+          </div>
+        </div>
+        <div class="permit-bar">
+          <div class="permit-label">
+            <span>Permit Status</span>
+            <span style="color: var(--gold)">Location Permit</span>
+          </div>
+          <div class="permit-track">
+            <div class="permit-fill" style="width: 50%"></div>
+          </div>
+          <div class="permit-steps">
+            <div class="permit-step done">Conceptual<br>Design</div>
+            <div class="permit-step done">Location<br>Permit</div>
+            <div class="permit-step">Building<br>Permit</div>
+            <div class="permit-step">Occupancy<br>Permit</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="investment-range">
+          <span>Investment Range</span>
+          €6M – €9M
+        </div>
+        <button class="card-cta" onclick="openModal('investor-modal', 'Luxury Villa Development')">Express Interest</button>
+      </div>
+      <div class="card-reveal">Click to register interest →</div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<div class="gold-divider"></div>
+
+<!-- BESPOKE SEARCH -->
+<section class="section bespoke-section" id="bespoke">
+  <div class="bespoke-grid">
+    <div class="bespoke-left">
+      <div class="section-tag">Bespoke Search</div>
+      <h2 class="section-title">Can't find what<br>you're looking for?<br><em>We'll find it for you.</em></h2>
+      <p class="bespoke-intro">Our network extends far beyond what is publicly listed. If you have specific investment criteria, we will actively search for projects that match — across Croatia and the wider Adriatic region.</p>
+      <div class="bespoke-features">
+        <div class="bespoke-feature">
+          <div class="bf-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <div>
+            <div class="bf-title">Active Project Sourcing</div>
+            <div class="bf-text">We reach out to our network of developers, landowners and legal offices to find off-market opportunities matching your criteria.</div>
+          </div>
+        </div>
+        <div class="bespoke-feature">
+          <div class="bf-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="bf-title">Fully Confidential</div>
+            <div class="bf-text">Your investment criteria and identity remain strictly confidential throughout the search process.</div>
+          </div>
+        </div>
+        <div class="bespoke-feature">
+          <div class="bf-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="bf-title">No Upfront Fee</div>
+            <div class="bf-text">Our bespoke search service operates on the same success fee model — you only pay if we find and close the right deal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bespoke-right">
+      <div class="bespoke-cta-wrap">
+      <div class="bespoke-cta-card">
+        <div class="bespoke-cta-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3 class="bespoke-cta-title">We'll find it<br><em>for you</em></h3>
+        <p class="bespoke-cta-text">Tell us your exact criteria — project type, region, investment size and return expectations. Our team will actively search our network for matching opportunities.</p>
+        <button class="bespoke-cta-btn" onclick="openModal('bespoke-modal')">Submit Your Investment Criteria →</button>
+        <p class="bespoke-cta-note">Confidential · No upfront fee · Response within 48h</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- MODAL -->
+
+
+
+<div class="modal-overlay" id="bespoke-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close-x" onclick="closeModal(this.closest('.modal-overlay').id)">✕</button>
+      <div class="modal-tag">Bespoke Search</div>
+      <div class="modal-title">Submit Your Investment Criteria</div>
+    </div>
+    <div class="modal-body">
+      <p class="modal-intro">Tell us what you're looking for. All information is strictly confidential.</p>
+      <div style="font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">Project Criteria</div>
+      <div class="form-group"><label class="form-label">Project Type <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(select all that apply)</span></label>
+        <div class="multi-select"><label><input type="checkbox"> Tourism & Hospitality</label><label><input type="checkbox"> Residential</label><label><input type="checkbox"> Commercial</label><label><input type="checkbox"> Mixed Use</label><label><input type="checkbox"> Industrial</label><label><input type="checkbox"> Agricultural / Rural</label></div></div>
+      <div class="form-group"><label class="form-label">Preferred Region <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(select all that apply)</span></label>
+        <div class="multi-select"><label><input type="checkbox"> Dalmatia — Coast</label><label><input type="checkbox"> Dalmatia — Islands</label><label><input type="checkbox"> Istria</label><label><input type="checkbox"> Kvarner Bay</label><label><input type="checkbox"> Zagreb & surroundings</label><label><input type="checkbox"> Slavonia</label><label><input type="checkbox"> Any region</label></div></div>
+      <div class="form-group"><label class="form-label">Investment Size <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(select all that apply)</span></label>
+        <div class="multi-select"><label><input type="checkbox"> €500K – €2M</label><label><input type="checkbox"> €2M – €5M</label><label><input type="checkbox"> €5M – €15M</label><label><input type="checkbox"> €15M – €30M</label><label><input type="checkbox"> €30M+</label></div></div>
+      <div class="form-group"><label class="form-label">Minimum Permit Status</label>
+        <select class="form-select"><option>No preference</option><option>No Permits Yet</option><option>Conceptual Design</option><option>Location Permit</option><option>Building Permit</option><option>Occupancy Permit</option></select></div>
+      <div class="form-group"><label class="form-label">Target ROI</label>
+        <select class="form-select"><option>No preference</option><option>5–8% per year</option><option>8–12% per year</option><option>12–20% per year</option><option>20%+ per year</option><option>Capital gain (exit focused)</option></select></div>
+      <div style="border-top:1px solid var(--gray-light);margin:1.5rem 0 1rem;padding-top:1.5rem;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Your Identity</div>
+      <div class="form-group form-row">
+        <div><label class="form-label">First Name *</label><input type="text" class="form-input" placeholder="Ivan"></div>
+        <div><label class="form-label">Last Name *</label><input type="text" class="form-input" placeholder="Horvat"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input" placeholder="ivan@example.com"></div>
+      <div class="form-group form-row">
+        <div><label class="form-label">Phone *</label><input type="tel" class="form-input" placeholder="+385 91 XXX XXXX"></div>
+        <div><label class="form-label">Country *</label><select class="form-select"><option value="">Select...</option><option>Croatia</option><option>Austria</option><option>Germany</option><option>Switzerland</option><option>Slovenia</option><option>United Kingdom</option><option>Netherlands</option><option>United States</option><option>UAE</option><option>Other</option></select></div>
+      </div>
+      <div class="form-group form-row">
+        <div><label class="form-label">Investor Type *</label><select class="form-select"><option value="">Select...</option><option>Private Individual</option><option>Private Company</option><option>Investment Fund</option><option>Family Office</option><option>HNWI</option></select></div>
+        <div><label class="form-label">Experience</label><select class="form-select"><option value="">Select...</option><option>First investment</option><option>1–3 projects</option><option>4–10 projects</option><option>10+ projects</option></select></div>
+      </div>
+      <div class="form-note">🔒 Strictly confidential. We will contact you within <strong>48 hours</strong>.</div>
+      <button class="form-submit">Submit Criteria →</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Croatia <span>Investments</span></div>
+      <div class="footer-tagline">Connecting Capital with Opportunity</div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="gdpr.html">GDPR</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="#">info&#64;croatia-investments&#46;com</a>
+        <a href="#">+385 95 504 3770</a>
+        <a href="#">Rijeka, Croatia</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Croatia Investments. All rights reserved.</div>
+    <div class="footer-legal">Investment involves risk. All financial projections are estimates only and do not constitute financial advice. Croatia Investments acts as an intermediary only. Please consult a qualified financial and legal advisor before investing.</div>
+  </div>
+</footer>
+
+
+
+
+<!-- BESPOKE MODAL -->
+<div class="modal-overlay" id="bespokeModalOverlay" onclick="closeBespokeOnOverlay(event)">
+  <div class="modal" id="bespokeModal">
+    <div class="modal-header">
+      <button class="modal-close-x" onclick="closeModal(this.closest('.modal-overlay').id)">✕</button>
+      <div class="modal-tag">Bespoke Search</div>
+      <div class="modal-title">Submit Your Investment Criteria</div>
+    </div>
+    <div class="modal-body">
+      <div id="bespokeModalForm">
+        <p class="modal-intro">Tell us what you're looking for and we'll actively search our network. All information is strictly confidential.</p>
+
+        <div style="font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;margin-top:0.5rem;">Project Criteria</div>
+
+        <div class="form-group">
+          <label class="form-label">Project Type <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(select all that apply)</span></label>
+          <div class="multi-select">
+            <label><input type="checkbox" name="btype" value="Tourism & Hospitality" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Tourism & Hospitality</label>
+            <label><input type="checkbox" name="btype" value="Residential" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Residential</label>
+            <label><input type="checkbox" name="btype" value="Commercial" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Commercial</label>
+            <label><input type="checkbox" name="btype" value="Mixed Use" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Mixed Use</label>
+            <label><input type="checkbox" name="btype" value="Industrial" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Industrial</label>
+            <label><input type="checkbox" name="btype" value="Agricultural / Rural" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Agricultural / Rural</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Preferred Region <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(select all that apply)</span></label>
+          <div class="multi-select">
+            <label><input type="checkbox" name="bregion" value="Dalmatia — Coast" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Dalmatia — Coast</label>
+            <label><input type="checkbox" name="bregion" value="Dalmatia — Islands" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Dalmatia — Islands</label>
+            <label><input type="checkbox" name="bregion" value="Istria" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Istria</label>
+            <label><input type="checkbox" name="bregion" value="Kvarner Bay" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Kvarner Bay</label>
+            <label><input type="checkbox" name="bregion" value="Zagreb & surroundings" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Zagreb & surroundings</label>
+            <label><input type="checkbox" name="bregion" value="Slavonia" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Slavonia</label>
+            <label><input type="checkbox" name="bregion" value="Any region" onchange="this.parentElement.classList.toggle('checked',this.checked)"> Any region</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Investment Size <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(select all that apply)</span></label>
+          <div class="multi-select">
+            <label><input type="checkbox" name="bsize" value="€500K–€2M" onchange="this.parentElement.classList.toggle('checked',this.checked)"> €500K – €2M</label>
+            <label><input type="checkbox" name="bsize" value="€2M–€5M" onchange="this.parentElement.classList.toggle('checked',this.checked)"> €2M – €5M</label>
+            <label><input type="checkbox" name="bsize" value="€5M–€15M" onchange="this.parentElement.classList.toggle('checked',this.checked)"> €5M – €15M</label>
+            <label><input type="checkbox" name="bsize" value="€15M–€30M" onchange="this.parentElement.classList.toggle('checked',this.checked)"> €15M – €30M</label>
+            <label><input type="checkbox" name="bsize" value="€30M+" onchange="this.parentElement.classList.toggle('checked',this.checked)"> €30M+</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Minimum Permit Status</label>
+          <select class="form-select">
+            <option value="">No preference</option>
+            <option>No Permits Yet</option>
+            <option>Conceptual Design</option>
+            <option>Location Permit</option>
+            <option>Building Permit</option>
+            <option>Occupancy Permit</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Target ROI</label>
+          <select class="form-select">
+            <option value="">No preference</option>
+            <option>5–8% per year</option>
+            <option>8–12% per year</option>
+            <option>12–20% per year</option>
+            <option>20%+ per year</option>
+            <option>Capital gain (exit focused)</option>
+          </select>
+        </div>
+
+        <div style="border-top:1px solid var(--gray-light);margin:1.5rem 0;padding-top:1.5rem;">
+          <div style="font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Your Identity</div>
+        </div>
+
+        <div class="form-group form-row">
+          <div>
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-input" placeholder="Ivan">
+          </div>
+          <div>
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-input" placeholder="Horvat">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-input" placeholder="ivan@example.com">
+        </div>
+
+        <div class="form-group form-row">
+          <div>
+            <label class="form-label">Phone *</label>
+            <input type="tel" class="form-input" placeholder="+385 91 XXX XXXX">
+          </div>
+          <div>
+            <label class="form-label">Country *</label>
+            <select class="form-select">
+              <option value="">Select...</option>
+              <option>Croatia</option><option>Austria</option><option>Germany</option>
+              <option>Switzerland</option><option>Slovenia</option><option>United Kingdom</option>
+              <option>Netherlands</option><option>United States</option><option>UAE</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group form-row">
+          <div>
+            <label class="form-label">Investor Type *</label>
+            <select class="form-select">
+              <option value="">Select...</option>
+              <option>Private Individual</option><option>Private Company</option>
+              <option>Investment Fund</option><option>Family Office</option><option>HNWI</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Experience</label>
+            <select class="form-select">
+              <option value="">Select...</option>
+              <option>First investment</option><option>1–3 projects</option>
+              <option>4–10 projects</option><option>10+ projects</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-note">🔒 Your identity and criteria are strictly confidential. We will review your profile and contact you within <strong>48 hours</strong>.</div>
+        <button class="form-submit" onclick="document.getElementById('bespokeModalForm').style.display='none';document.getElementById('bespokeModalSuccess').style.display='block'">Submit Criteria →</button>
+      </div>
+
+      <div class="success-state" id="bespokeModalSuccess" style="display:none;">
+        <div class="success-icon">✓</div>
+        <h3>Criteria Received</h3>
+        <p>Thank you. Our team will review your criteria and be in touch within <strong>48 hours</strong>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal-overlay" id="investor-modal">
+  <div class="modal">
+    <div class="modal-header" id="modalHeader">
+      <button class="modal-close-x" onclick="closeModal('investor-modal')">&#x2715;</button>
+      <div class="modal-tag" id="modalTag">Express Interest</div>
+      <div class="modal-title" id="modalTitle">Register as Investor</div>
+    </div>
+    <div class="modal-body">
+      <div id="formView">
+        <p class="modal-intro" id="modalIntro">Join our network of verified investors and receive early access to new projects as they are listed on the platform.</p>
+        <form name="investor-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="investor-interest">
+          <input type="hidden" name="project" id="projectField" value="">
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="form-group form-row">
+            <div><label class="form-label">First Name *</label><input type="text" name="first_name" class="form-input" placeholder="Ivan" required></div>
+            <div><label class="form-label">Last Name *</label><input type="text" name="last_name" class="form-input" placeholder="Horvat" required></div>
+          </div>
+          <div class="form-group form-row">
+            <div><label class="form-label">Company <span style="color:var(--gray);font-weight:300;text-transform:none;letter-spacing:0">(if applicable)</span></label><input type="text" name="company" class="form-input" placeholder="Acme Capital d.o.o."></div>
+            <div><label class="form-label">Position / Title</label><input type="text" name="position" class="form-input" placeholder="CEO, Investment Director..."></div>
+          </div>
+          <div class="form-group"><label class="form-label">Email Address *</label><input type="email" name="email" class="form-input" placeholder="ivan@example.com" required></div>
+          <div class="form-group form-row">
+            <div><label class="form-label">Phone Number *</label><input type="tel" name="phone" class="form-input" placeholder="+385 91 XXX XXXX" required></div>
+            <div><label class="form-label">Country of Residence *</label>
+              <select name="country" class="form-select" required>
+                <option value="">Select country</option>
+                <option>Croatia</option><option>Austria</option><option>Germany</option>
+                <option>Switzerland</option><option>Slovenia</option><option>United Kingdom</option>
+                <option>Netherlands</option><option>United States</option><option>UAE</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-row">
+            <div><label class="form-label">Investor Type *</label>
+              <select name="investor_type" class="form-select" required>
+                <option value="">Select type</option>
+                <option>Private Individual</option><option>Private Company</option>
+                <option>Investment Fund</option><option>Family Office</option><option>HNWI</option>
+              </select>
+            </div>
+            <div><label class="form-label">Previous Real Estate Experience</label>
+              <select name="experience" class="form-select">
+                <option value="">Select level</option>
+                <option>First investment</option><option>1-3 projects</option>
+                <option>4-10 projects</option><option>10+ projects / professional</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-note">&#x1F512; Your data is protected under GDPR. We will not share your information with third parties without your explicit consent. A member of our team will contact you within 48 hours.</div>
+          <button type="submit" class="form-submit">Submit Investor Profile &#x2192;</button>
+        </form>
+      </div>
+      <div class="success-state" id="successState">
+        <div class="success-icon">&#x2713;</div>
+        <h3>Profile Received</h3>
+        <p>Thank you for your interest. Our team will review your profile and contact you within <strong>24-48 hours</strong> to proceed with documentation access and project owner introduction.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(id, project) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  // Set project name in header and hidden field
+  if (project) {
+    document.getElementById('modalTag').textContent = 'Express Interest';
+    document.getElementById('modalTitle').textContent = project;
+    document.getElementById('modalIntro').textContent = 'You are expressing interest in "' + project + '". Please complete your investor profile below to receive full documentation and be connected with the project owner.';
+    document.getElementById('projectField').value = project;
+  } else {
+    document.getElementById('modalTag').textContent = 'General Registration';
+    document.getElementById('modalTitle').textContent = 'Register as Investor';
+    document.getElementById('modalIntro').textContent = 'Join our network of verified investors and receive early access to new projects as they are listed on the platform.';
+    document.getElementById('projectField').value = '';
+  }
+  // Reset form state
+  document.getElementById('formView').style.display = 'block';
+  document.getElementById('successState').style.display = 'none';
+  el.classList.add('open'); el.style.visibility='visible'; el.style.opacity='1';
+  document.body.style.overflow='hidden';
+}
+function closeModal(id) {
+  var targets = id ? [document.getElementById(id)] : Array.from(document.querySelectorAll('.modal-overlay'));
+  targets.forEach(function(el){ if(el){ el.classList.remove('open'); el.style.visibility='hidden'; el.style.opacity='0'; } });
+  document.body.style.overflow='';
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(data).toString() })
+    .then(function() {
+      document.getElementById('formView').style.display='none';
+      document.getElementById('successState').style.display='block';
+    })
+    .catch(function() {
+      document.getElementById('formView').style.display='none';
+      document.getElementById('successState').style.display='block';
+    });
+}
+document.addEventListener('click', function(e){ if(e.target.classList.contains('modal-overlay')) closeModal(e.target.id); });
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+</script>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display:none">
+<style>
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: rgba(13,27,42,0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201,168,76,0.25);
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: 'DM Sans', sans-serif;
+  animation: cookie-slide-up 0.4s ease;
+}
+@keyframes cookie-slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+#cookie-banner p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+#cookie-banner a {
+  color: #c9a84c;
+  text-decoration: none;
+}
+#cookie-banner a:hover { text-decoration: underline; }
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.cookie-btn-essential {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.4);
+  color: rgba(255,255,255,0.6);
+  padding: 8px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-essential:hover {
+  border-color: rgba(201,168,76,0.8);
+  color: #fff;
+}
+.cookie-btn-accept {
+  background: #c9a84c;
+  border: 1px solid #c9a84c;
+  color: #0d1b2a;
+  padding: 8px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-accept:hover {
+  background: #e0c578;
+  border-color: #e0c578;
+}
+@media (max-width: 640px) {
+  #cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 4%;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn-essential, .cookie-btn-accept { flex: 1; text-align: center; }
+}
+</style>
+<p>We use cookies — to keep the site running and to understand how you use it. Analytics cookies are only set with your consent. <a href="/privacy.html">Learn more</a></p>
+<div class="cookie-actions">
+  <button class="cookie-btn-essential" onclick="cookieChoice('essential')">Essential Only</button>
+  <button class="cookie-btn-accept" onclick="cookieChoice('all')">Accept All</button>
+</div>
+</div>
+<script>
+(function() {
+  var consent = localStorage.getItem('ci-cookie-consent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+})();
+function cookieChoice(type) {
+  localStorage.setItem('ci-cookie-consent', type);
+  var b = document.getElementById('cookie-banner');
+  b.style.transition = 'opacity 0.3s, transform 0.3s';
+  b.style.opacity = '0';
+  b.style.transform = 'translateY(20px)';
+  setTimeout(function() { b.style.display = 'none'; }, 320);
+}
+</script>
+
+  <script src="/pwa-init.js"></script>
+</body>
+</html>

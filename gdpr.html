@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDPR — Croatia Investments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0d1b2a;--gold:#c9a84c;--cream:#f8f5ef;--white:#ffffff;--gray:#8a9ab0;--gray-light:#dce4ee;--text:#2a3a4e;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,42,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:100px;}
+  @media (max-width: 768px) {
+    nav { height: 68px; padding: 0 4%; }
+    nav svg { height: 52px !important; }
+    .nav-details .drop { top: 68px; }
+  }
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:500;color:var(--white);text-decoration:none;}
+  .nav-logo span{color:var(--gold);}
+  .nav-tagline{font-size:0.62rem;font-weight:300;letter-spacing:0.08em;color:rgba(255,255,255,0.35);font-style:italic;margin-top:2px;}
+  .nav-links{display:flex;gap:2.5rem;list-style:none;}
+  .nav-links a{color:var(--gray);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:9px 24px;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;text-decoration:none;}
+  .nav-cta:hover{background:var(--gold);color:var(--navy);}
+  .page-hero{background:var(--navy);padding:140px 5% 60px;}
+  .page-tag{font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
+  .page-tag::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+  .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--white);}
+  .page-hero p{font-size:0.95rem;font-weight:300;color:rgba(255,255,255,0.55);max-width:580px;margin-top:1rem;line-height:1.75;}
+  .gold-divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .legal-content{max-width:800px;margin:0 auto;padding:80px 5%;}
+  .legal-content h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--navy);margin:2.5rem 0 1rem;padding-top:2rem;border-top:1px solid var(--gray-light);}
+  .legal-content h2:first-child{border-top:none;margin-top:0;padding-top:0;}
+  .legal-content p{font-size:0.9rem;line-height:1.85;color:var(--text);margin-bottom:1rem;}
+  .legal-content ul{margin:0.5rem 0 1rem 1.5rem;}
+  .legal-content ul li{font-size:0.9rem;line-height:1.85;color:var(--text);margin-bottom:0.4rem;}
+  .legal-date{font-size:0.78rem;color:var(--gray);margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--gray-light);}
+  .rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;margin:1.5rem 0;}
+  .right-card{background:var(--white);border:1px solid var(--gray-light);padding:24px;}
+  .right-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;}
+  .right-text{font-size:0.82rem;color:var(--gray);line-height:1.65;}
+  .contact-box{background:var(--navy);padding:32px 36px;margin-top:2rem;border-left:2px solid var(--gold);}
+  .contact-box p{color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.75;margin-bottom:0.5rem;}
+  .contact-box a{color:var(--gold);text-decoration:none;}
+  footer{background:var(--navy);border-top:1px solid rgba(201,168,76,0.15);padding:40px 5%;}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+  .footer-nav{display:flex;gap:2rem;}
+  .footer-nav a{font-size:0.75rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;}
+  .footer-nav a:hover{color:var(--white);}
+  @media(max-width:768px){.nav-links{display:none;}.rights-grid{grid-template-columns:1fr;}}
+
+  
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  .nav-cta-sellers {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+    padding: 9px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s;
+    white-space: nowrap;
+  }
+  .nav-cta-sellers:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+  }
+  @media (max-width: 768px) {
+    .nav-cta-sellers { display: none; }
+    .nav-cta { display: none !important; }
+  }
+
+  /* DETAILS HAMBURGER - pure HTML, no JS */
+  .nav-details {
+    display: none;
+    position: relative;
+    z-index: 300;
+  }
+  .nav-details summary {
+    list-style: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .nav-details summary::-webkit-details-marker { display: none; }
+  .nav-details summary::marker { display: none; }
+  .nav-details summary span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .nav-details[open] summary span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-details[open] summary span:nth-child(2) { opacity: 0; }
+  .nav-details[open] summary span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-details .drop {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background: #0d1b2a;
+    border-bottom: 2px solid rgba(201,168,76,0.4);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    z-index: 299;
+  }
+  .nav-details .drop a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 18px 6%;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: block;
+  }
+  .nav-details .drop a:hover { color: #c9a84c; background: rgba(201,168,76,0.05); }
+  @media (max-width: 768px) {
+    .nav-details { display: block; }
+    .nav-cta { display: none !important; }
+    .nav-links { display: none !important; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-logo { font-size: 1.5rem; }
+    .page-hero h1 { font-size: 1.8rem; }
+    .legal-content h2 { font-size: 1.3rem; }
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(13,27,42,0.75); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem; visibility: hidden; opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; visibility: visible; }
+  .modal { background: var(--white); width: 100%; max-width: 620px; max-height: 90vh; overflow-y: auto; position: relative; }
+  .modal-body { padding: 36px 40px 40px; }
+  .modal-close-x { position: absolute; top: 18px; right: 20px; background: transparent; border: none; color: rgba(255,255,255,0.5); font-size: 1rem; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: color 0.2s; z-index: 1; }
+  .modal-close-x:hover { color: var(--white); }
+  .modal-header { background: var(--navy); padding: 36px 40px 28px; position: relative; }
+  .modal-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--white); }
+  .modal-intro { font-size: 0.88rem; color: var(--gray); line-height: 1.7; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--gray-light); }
+  .form-group { margin-bottom: 1.4rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-label { display: block; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 7px; }
+  .form-input, .form-select { width: 100%; border: 1px solid var(--gray-light); background: var(--cream); padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--text); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+  .form-input:focus, .form-select:focus { border-color: var(--gold); background: var(--white); }
+  .form-note { font-size: 0.75rem; color: var(--gray); line-height: 1.6; margin-top: 1rem; padding: 12px 16px; border-left: 2px solid var(--gold); background: rgba(201,168,76,0.05); }
+  .form-submit { width: 100%; background: var(--navy); color: var(--white); border: none; padding: 16px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.25s; margin-top: 1.5rem; }
+  .form-submit:hover { background: var(--navy-light); }
+  .success-state { text-align: center; padding: 3rem 2rem; display: none; }
+  .success-icon { width: 64px; height: 64px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; }
+  .success-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--navy); margin-bottom: 0.75rem; }
+  .success-state p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+  @media (max-width: 768px) {
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal { max-height: 92vh; }
+    .modal-header { padding: 24px 20px 18px; }
+    .modal-body { padding: 24px 20px 28px; }
+    .modal-title { font-size: 1.4rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    nav { height: 80px; padding: 0 3%; 
+    /* Lighter backgrounds on tablet */
+    .hero { background: #1e3448 !important; }
+    .how-section { background: #1e3448 !important; }
+    .card-header { background: #1e3448 !important; }
+    .modal-header { background: #1e3448 !important; }
+    .bespoke-cta-card { background: #1e3448 !important; }
+    footer { background: #1a2e40 !important; }
+    nav { background: rgba(24,44,62,0.97) !important; }
+    .page-hero { background: #1e3448 !important; }
+  }
+    nav svg { height: 72px !important; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.05em; }
+    .nav-cta { padding: 7px 14px; font-size: 0.7rem; letter-spacing: 0.06em; }
+    .nav-cta-sellers { display: none; }
+    .nav-details .drop { top: 80px; }
+  }
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 60px 5% 40px;
+  }
+
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-tagline {
+    font-size: 0.78rem;
+    color: var(--gray);
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  .footer-links {
+    display: flex; gap: 4rem;
+  }
+
+  .footer-col-title {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .footer-legal {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    max-width: 500px;
+    line-height: 1.6;
+    text-align: right;
+  }
+
+  html, body { overflow-x: hidden; max-width: 100%; }
+</style>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Croatia Investments">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="theme-color" content="#0d1b2a">
+</head>
+<body>
+
+
+
+<nav>
+    <a href="index.html" style="text-decoration:none; display:flex; align-items:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" style="height:124px; width:auto; display:block;">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#e8d48a"/>
+          <stop offset="50%" style="stop-color:#d4a84c"/>
+          <stop offset="100%" style="stop-color:#b8922e"/>
+        </linearGradient>
+        <clipPath id="boxClip">
+          <rect x="34" y="34" width="92" height="92"/>
+        </clipPath>
+      </defs>
+      <rect x="34" y="34" width="92" height="92" fill="none" stroke="url(#goldGrad)" stroke-width="1.8"/>
+      <text x="65" y="107" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="400" fill="#d4a84c" clip-path="url(#boxClip)" text-anchor="middle">C</text>
+      <text x="103" y="107" font-family="Cormorant Garamond, Georgia, serif" font-size="76" font-weight="400" fill="#ffffff" clip-path="url(#boxClip)" text-anchor="middle">I</text>
+      <line x1="146" y1="44" x2="146" y2="116" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.5"/>
+      <text x="162" y="72" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="500" fill="#ffffff" letter-spacing="0.5">CROATIA</text>
+      <text x="162" y="100" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="400" fill="#d4a84c" letter-spacing="0.5">INVESTMENTS</text>
+      <text x="162" y="120" font-family="Georgia, serif" font-size="8.5" font-weight="300" fill="#8a9ab0" letter-spacing="2.5" font-style="italic">PREMIUM DEVELOPMENT OPPORTUNITIES</text>
+      <line x1="162" y1="128" x2="372" y2="128" stroke="#c9a84c" stroke-width="0.5" stroke-opacity="0.5"/>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="projects.html#bespoke">Bespoke</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:0.75rem;">
+    <a href="sellers.html" class="nav-cta-sellers">List Your Project</a>
+    <button class="nav-cta" onclick="openModal('investor-modal')">Register as Investor</button>
+  </div>
+
+  
+
+<details class="nav-details">
+  <summary><span></span><span></span><span></span></summary>
+  <div class="drop">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="projects.html#bespoke">Bespoke Search</a>
+    <a href="index.html#process">Process</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="sellers.html">For Sellers</a>
+      <a href="#" onclick="closeModal();openModal('investor-modal');return false;" style="color:var(--gold);font-weight:500;">Register as Investor</a>
+  </div>
+</details>
+</nav>
+
+
+
+<section class="page-hero">
+  <div class="page-tag">Legal</div>
+  <h1>GDPR — Your Data Rights</h1>
+  <p>Croatia Investments is fully committed to your privacy and the protection of your personal data under the General Data Protection Regulation (EU) 2016/679.</p>
+</section>
+<div class="gold-divider"></div>
+
+<div class="legal-content">
+  <p class="legal-date">Last updated: March 2025</p>
+
+  <h2>Our Commitment to GDPR</h2>
+  <p>The General Data Protection Regulation (GDPR) is a European Union regulation that governs how organisations collect, store, use and protect personal data of individuals within the EU and EEA. As a platform that serves investors and project owners across Europe, we take our GDPR obligations seriously.</p>
+  <p>Our platform is designed with privacy by default — we collect only the data we need, we store it securely, and we share it only when necessary and with your knowledge.</p>
+
+  <h2>Your Rights Under GDPR</h2>
+  <p>As a data subject, you have the following rights which you may exercise at any time by contacting us:</p>
+  <div class="rights-grid">
+    <div class="right-card">
+      <div class="right-title">Right of Access</div>
+      <div class="right-text">You have the right to request a copy of all personal data we hold about you, free of charge, within 30 days of your request.</div>
+    </div>
+    <div class="right-card">
+      <div class="right-title">Right to Rectification</div>
+      <div class="right-text">You have the right to request correction of any inaccurate or incomplete personal data we hold about you.</div>
+    </div>
+    <div class="right-card">
+      <div class="right-title">Right to Erasure</div>
+      <div class="right-text">You may request deletion of your personal data where it is no longer necessary for the purposes it was collected, subject to our legal retention obligations.</div>
+    </div>
+    <div class="right-card">
+      <div class="right-title">Right to Restriction</div>
+      <div class="right-text">You may request that we limit the processing of your personal data in certain circumstances, for example while accuracy is disputed.</div>
+    </div>
+    <div class="right-card">
+      <div class="right-title">Right to Portability</div>
+      <div class="right-text">You have the right to receive your personal data in a structured, commonly used, machine-readable format and to transmit it to another controller.</div>
+    </div>
+    <div class="right-card">
+      <div class="right-title">Right to Object</div>
+      <div class="right-text">You may object to the processing of your personal data where we rely on legitimate interests as our legal basis. We will cease processing unless we can demonstrate compelling grounds.</div>
+    </div>
+  </div>
+
+  <h2>Lawful Basis for Processing</h2>
+  <p>We process your personal data on the following lawful bases under Article 6 GDPR:</p>
+  <ul>
+    <li><strong>Contract (Art. 6(1)(b)):</strong> Processing necessary for the performance of our intermediary services</li>
+    <li><strong>Legal obligation (Art. 6(1)(c)):</strong> Processing required to comply with Croatian and EU law</li>
+    <li><strong>Legitimate interests (Art. 6(1)(f)):</strong> Operating a secure, verified investment platform</li>
+    <li><strong>Consent (Art. 6(1)(a)):</strong> Where you have explicitly consented, such as for marketing communications</li>
+  </ul>
+
+  <h2>International Data Transfers</h2>
+  <p>Where we transfer personal data outside the European Economic Area, we ensure appropriate safeguards are in place in accordance with Chapter V of the GDPR, including Standard Contractual Clauses (SCCs) approved by the European Commission.</p>
+
+  <h2>Data Protection Officer</h2>
+  <p>Given the scale of our current operations, we are not required to appoint a formal Data Protection Officer. However, all data protection matters are handled directly by management and we maintain the same standards expected of a DPO.</p>
+
+  <h2>How to Exercise Your Rights</h2>
+  <p>To exercise any of your rights, or to raise a concern about how we handle your personal data, please contact us using the details below. We will acknowledge your request within 5 working days and provide a full response within 30 days.</p>
+
+  <div class="contact-box">
+    <p><strong style="color:var(--gold)">Data Privacy Contact</strong></p>
+    <p>Email: <a href="#">info&#64;croatia-investments&#46;com</a></p>
+    <p>Phone: +385 95 504 3770</p>
+    <p>Address: Rijeka, Croatia</p>
+    <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.4);">If you are not satisfied with our response, you have the right to lodge a complaint with the Croatian supervisory authority: <a href="https://azop.hr" target="_blank" style="color:var(--gold)">AZOP — azop.hr</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Croatia Investments. All rights reserved.</div>
+    <div class="footer-nav">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="gdpr.html">GDPR</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+<script>
+</script>
+
+
+
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display:none">
+<style>
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9999;
+  background: rgba(13,27,42,0.97);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(201,168,76,0.25);
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: 'DM Sans', sans-serif;
+  animation: cookie-slide-up 0.4s ease;
+}
+@keyframes cookie-slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+#cookie-banner p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+#cookie-banner a {
+  color: #c9a84c;
+  text-decoration: none;
+}
+#cookie-banner a:hover { text-decoration: underline; }
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.cookie-btn-essential {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.4);
+  color: rgba(255,255,255,0.6);
+  padding: 8px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-essential:hover {
+  border-color: rgba(201,168,76,0.8);
+  color: #fff;
+}
+.cookie-btn-accept {
+  background: #c9a84c;
+  border: 1px solid #c9a84c;
+  color: #0d1b2a;
+  padding: 8px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.cookie-btn-accept:hover {
+  background: #e0c578;
+  border-color: #e0c578;
+}
+@media (max-width: 640px) {
+  #cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 4%;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn-essential, .cookie-btn-accept { flex: 1; text-align: center; }
+}
+</style>
+<p>We use cookies — to keep the site running and to understand how you use it. Analytics cookies are only set with your consent. <a href="/privacy.html">Learn more</a></p>
+<div class="cookie-actions">
+  <button class="cookie-btn-essential" onclick="cookieChoice('essential')">Essential Only</button>
+  <button class="cookie-btn-accept" onclick="cookieChoice('all')">Accept All</button>
+</div>
+</div>
+<script>
+(function() {
+  var consent = localStorage.getItem('ci-cookie-consent');
+  if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+})();
+function cookieChoice(type) {
+  localStorage.setItem('ci-cookie-consent', type);
+  var b = document.getElementById('cookie-banner');
+  b.style.transition = 'opacity 0.3s, transform 0.3s';
+  b.style.opacity = '0';
+  b.style.transform = 'translateY(20px)';
+  setTimeout(function() { b.style.display = 'none'; }, 320);
+}
+</script>
+
+  <script src="/pwa-init.js"></script>
+</body>
+</html>
